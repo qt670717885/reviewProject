@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>垂直居中</title>
+    <style>
+        .box1,
+        .box2 {
+            width: 500px;
+            height: 500px;
+            position: relative;
+            border: 1px solid #000;
+        }
+
+        .box2 {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .child1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: tomato;
+        }
+
+        .child2 {
+            background: tomato;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="child1">宽高不固定的元素垂直水平居中</div>
+    </div>
+    <div class="box2">
+        <div class="child2">宽高不固定的元素垂直水平居中</div>
+    </div>
+</body>
+
+</html>

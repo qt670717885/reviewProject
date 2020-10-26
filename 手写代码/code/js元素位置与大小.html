@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拖拽</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background: tomato;
+            padding: 20px;
+            border: 10px solid #000;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        const box = document.querySelector('.box');
+        // 元素自身大小
+        const clientWidth = box.clientWidth;
+        const offsetWidth = box.offsetWidth;
+        const clientTop = box.clientTop;
+        console.log(`offsetWidth : ${offsetWidth}`); // offsetWidth : 160
+        console.log(`clientWidt:${clientWidth}`); // clientWidt:140
+        console.log(`clientTop : ${clientTop}`); // clientTop : 10
+
+        // 元素的偏移量
+        console.log(`offsetTop : ${box.offsetTop}`); // offsetWidth : 100
+        console.log(`offsetLeft : ${box.offsetLeft}`); // offsetWidth : 100
+
+        // 元素大小与距离视口位置
+        const rect =  box.getBoundingClientRect()
+        console.log(`rect.width:${rect.width}`) // rect.width:160
+        console.log(`rect.x:${rect.x}`) // rect.x:100
+        console.log(`rect.y:${rect.y}`) // rect.y:100
+        console.log(`rect.top:${rect.top}`) // rect.top:100
+        console.log(`rect.right:${rect.right}`) // rect.right:260
+        console.log(`rect.bottom:${rect.bottom}`) // rect.bottom:260
+        console.log(`rect.left:${rect.left}`) // rect.left:100
+
+        // 视口大小
+        console.log(`documentClientWidth : ${document.documentElement.clientWidth}`) // documentClientWidth : 898
+        console.log(`documentClientHeight : ${document.documentElement.clientHeight}`) // documentClientHeight : 1057
+
+        // 窗口大小
+        console.log(`documentScrollWidth : ${document.documentElement.scrollWidth}`)
+        console.log(`documentScrollHeight : ${document.documentElement.scrollHeight}`)
+    
+        // 窗口左上角与屏幕左上角的距离
+        console.log(`windowScreenX : ${window.screenX}`)  // windowScreenX : 0
+        console.log(`windowScreenY : ${window.screenY}`)   // windowScreenY : 0
+    
+        // 窗口内高度
+        console.log(`innerWidth : ${window.innerWidth}`)  // innerWidth : 898
+        console.log(`innerHeight : ${window.innerHeight}`)  // innerHeight : 1057
+    </script>
+</body>
+
+</html>

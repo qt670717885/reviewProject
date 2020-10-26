@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>横向三蓝布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* flex 布局 */
+        /* .box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        .left {
+            width: 100px;
+            height: 100%;
+            background: tomato;
+        }
+
+        .center {
+            flex: 1;
+            background: skyblue;
+        }
+
+        .right {
+            width: 100px;
+            height: 100%;
+            background: springgreen;
+        } */
+        /* position */
+        /* .box {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .left {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: tomato;
+            width: 100px;
+        }
+
+        .right {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background: tomato;
+            width: 100px;
+        }
+        .center{
+            margin: 0 auto;
+            height: 100%;
+            background: skyblue;
+        } */
+        /* flex */
+        .box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .left,.right{
+            width: 100px;
+            height: 100%;
+            background: tomato;
+        }
+        .center{
+            flex: 1;
+            background: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left"></div>
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+</body>
+
+</html>

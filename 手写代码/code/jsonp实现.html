@@ -1,0 +1,23 @@
+
+<!-- 手写jsonp -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手写jsonp实现</title>
+</head>
+<body>
+    <script>
+        let script = document.createElement('script')
+        script.type = 'text/javaScript'
+        script.src = 'url?user=admin&callback=cb'
+        function cb (res) {
+            alert(JSON.stringify(res));
+        }
+    </script>
+</body>
+</html>
+
+ 

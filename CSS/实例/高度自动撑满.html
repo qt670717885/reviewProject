@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高度自动撑满</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html,body {
+            width: 100%;
+            height: 100%;
+        }
+        /* 方法一 ： 使用position :absolute */
+        /* .box {
+            width: 100%;
+            height: 100%;
+            background: yellow;
+            position: relative;
+        }
+        .child1 {
+            width: 100%;
+            height: 50px;
+            background: seagreen;
+        }
+        .child2 {
+            width: 100%;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            bottom: 50px;
+            background: tomato;
+        } */
+        /* 方法二:使用felx */
+        .box {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+        .child1 {
+            width: 100%;
+            height: 50px;
+            background: seagreen;
+        }
+        .child2 {
+            width: 100%;
+            background: tomato;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="child1"></div>
+        <div class="child2"></div>
+        <div class="child1"></div>
+    </div>
+</body>
+</html>

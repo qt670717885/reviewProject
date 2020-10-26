@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background: tomato;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background: tomato;
+            position: absolute;
+            top: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <script>
+        const box1 = document.querySelector('.box1')
+        const box2 = document.querySelector('.box2')
+
+        // 方案一： 使用getBoundingClientRect()
+        function isSElementViewport(element) {
+            const rect = element.getBoundingClientRect()
+            if (rect.top < document.documentElement.clientHeight && rect.bottom > 0 && rect.left < document
+                .documentElement.clientWidth && rect.right > 0) {
+                return true
+            } else {
+                return false
+            }
+        }
+        console.log(isSElementViewport(box2))
+        // 方案二 使用 Intersction Observer 判断元素是否可见
+        if ("IntersectionObserver" in window) {
+            let lazyImageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry, index) => {
+                    // 如果元素可见            
+                    if (entry.intersectionRatio > 0) {
+                        let lazyImage = entry.target
+                        lazyImage.src = lazyImage.dataset.src
+                        lazyImage.classList.remove("lazy-image")
+                        lazyImageObserver.unobserve(lazyImage)
+                        // this.lazyImages.splice(index, 1)            
+                    }
+                })
+            })
+            this.lazyImages.forEach(function (lazyImage) {
+                lazyImageObserver.observe(lazyImage);
+            })
+        }
+    </script>
+</body>
+
+</html>

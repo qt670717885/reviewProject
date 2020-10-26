@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣杯布局</title>
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header,
+        footer {
+            width: 100%;
+            background: green;
+        }
+
+        .container {
+            overflow: hidden;
+            min-height: 100px;
+        }
+
+        .warp,
+        .left,
+        .right {
+            float: left;
+        }
+
+        .main {
+            margin-left: 200px;
+            margin-right: 200px;
+            background: yellow;
+            min-height: 100px;
+        }
+
+        .left,
+        .right {
+            background: red;
+            min-height: 100px;
+            width: 200px;
+        }
+
+        .left {
+            margin-left: -100%;
+        }
+
+        .right {
+            margin-left: -200px;
+        }
+
+        .warp {
+            width: 100%;
+            min-height: 100px;
+        } */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header,
+        footer {
+            width: 100%;
+            background: green;
+        }
+        .warp,.left,.right{
+            float: left;
+        }
+        .container{
+            overflow: hidden;
+        }
+        .warp{
+            width: 100%;
+            min-height: 100px;
+        }
+        .left,.right{
+            width: 200px;
+            min-height: 100px;
+            background: red;
+        }
+        .left{
+            margin-left: -100%;
+        }
+        .right{
+            margin-left: -200px;
+        }
+        .main{
+            margin-left: 200px;
+            margin-right: 200px;
+            background: yellow;
+            min-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>header</header>
+    <div class="container">
+        <div class="warp">
+            <div class="main">main</div>
+        </div>
+
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+    <footer>footer</footer>
+</body>
+
+</html>

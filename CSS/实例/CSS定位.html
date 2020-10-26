@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS定位</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .test1 {
+            width: 100px;
+            height: 100px;
+            background: tomato;
+            position: relative;
+            left: 10px;
+        }
+        .test2{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000000;
+            position: relative;
+            top:10px;
+        }
+        .child2{
+            position: absolute;
+            top: 10px;
+            background: tomato;
+        }
+    </style>
+</head>
+<body>
+    <div class="test1">relative</div>
+    <div class="test2">
+        <div class="child2">absolute</div>
+    </div>
+</body>
+</html>

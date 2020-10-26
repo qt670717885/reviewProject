@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣杯布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header,
+        footer {
+            width: 100%;
+            background: green;
+        }
+
+        .container {
+            background: gray;
+            overflow: hidden;
+            padding: 0 200px;
+            min-width: 200px;
+        }
+
+        .main,
+        .left,
+        .right {
+            float: left;
+            min-height: 100px;
+        }
+
+        .main {
+            background: yellow;
+            width: 100%;
+        }
+
+        .left {
+            background: red;
+            margin-left: -100%;
+            width: 200px;
+            position: relative;
+            left: -200px;
+        }
+
+        .right {
+            background: red;
+            margin-left: -200px;
+            width: 200px;
+            position: relative;
+            right: -200px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 圣杯布局解决遮盖就是要使用padding压缩内部空间，再使用定位让left,right脱离文档流 -->
+    <header>header</header>
+    <div class="container">
+        <div class="main">main</div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+    <footer>footer</footer>
+</body>
+
+</html>
