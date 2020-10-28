@@ -81,7 +81,9 @@ function defineReactive(obj, key, val) {
             return val;
         },
         set: newVal => {
-            if (val === newVal) return;
+            if (val === newVal)
+            
+            return;
             val = newVal;
             // 对新值进行监听
             chlidOb = observe(newVal);

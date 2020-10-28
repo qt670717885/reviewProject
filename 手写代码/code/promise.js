@@ -319,7 +319,7 @@
 
 class myPromise {
     constructor(excutor) {
-        this.state = 'pening'
+        this.state = 'pending'
         this.value = undefined //成功时候的值
         this.reson = undefined // 失败时候的值
         this.onresolveCallback = []
